@@ -165,15 +165,13 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-4 offset-sm-4">
-          <form>
+          <form id="loginForm" method="post" action="r">
             <div class="mb-3 py-4">
-              <label for="exampleInputEmail1" class="form-label"
-                >Email address</label
-              >
+              <label for="email" class="form-label">Email address</label>
               <input
                 type="email"
                 class="form-control"
-                id="exampleInputEmail1"
+                id="email"
                 aria-describedby="emailHelp"
               />
               <div id="emailHelp" class="form-text">
@@ -181,14 +179,8 @@
               </div>
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label"
-                >Password</label
-              >
-              <input
-                type="password"
-                class="form-control"
-                id="exampleInputPassword1"
-              />
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" />
             </div>
             <div class="mb-3 form-check">
               <input
@@ -228,5 +220,11 @@
       integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        var form = document.getElementById("loginForm");
+        form.addEventListener("submit", validateLogin);
+      };
+    </script>
   </body>
 </html>
